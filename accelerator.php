@@ -30,8 +30,6 @@ echo count($output)." generated Subnets\n";
 $calc = floor(count($output) / $slices);
 
 for ($i = 0; $i <= $calc *$slices; $i = $i + $calc) {
-    echo $i."\n";
-    echo $i + $calc."\n";
     $tmp = array_slice($output, $i, $calc);
     file_put_contents($i.'.txt', implode(PHP_EOL,$tmp));
 }
